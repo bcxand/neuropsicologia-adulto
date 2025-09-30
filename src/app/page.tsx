@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { Play, CheckCircle, Brain, Users, Heart, BookOpen, Target, Compass, Sparkles, Phone, Mail, Youtube, Facebook, Instagram, ChevronDown, ChevronUp, Stethoscope, GraduationCap, UserCheck, Baby, Lightbulb, HeartHandshake, MessageCircle } from "lucide-react";
+import React, { useState } from "react";
+import { Play, CheckCircle, Brain, Users, Heart, BookOpen, Target, Compass, Sparkles, Phone, Mail, Youtube, Facebook, Instagram, ChevronDown, ChevronUp, Stethoscope, GraduationCap, UserCheck, Baby, Lightbulb, HeartHandshake, MessageCircle, Scale, Home as HomeIcon, MapPin } from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   const [isVideoPlaying, setIsVideoPlaying] = useState<string | null>(null);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
@@ -109,6 +109,20 @@ export default function Home() {
         "Redução da ansiedade na tomada de decisão",
         "Maior probabilidade de satisfação profissional"
       ]
+    },
+    {
+      icon: <Scale className="w-8 h-8" />,
+      title: "Avaliação Criminalista/Perito Judicial",
+      description: "Perícia psicológica especializada para o sistema judiciário",
+      image: "https://k6hrqrxuu8obbfwn.public.blob.vercel-storage.com/temp/12555431-8cf4-42d3-a25d-37c171aa3f58.jpg",
+      fullDescription: "Serviço especializado em avaliação psicológica forense para auxiliar o sistema judiciário em processos que requerem perícia técnica. Realizamos avaliações de capacidade civil, responsabilidade penal, danos psíquicos, guarda de menores, alienação parental e outras demandas judiciais. Utilizamos instrumentos psicológicos validados, entrevistas estruturadas e análise documental para produzir laudos técnicos precisos e imparciais. O trabalho é conduzido com rigor científico, ética profissional e total imparcialidade, seguindo as diretrizes do Conselho Federal de Psicologia.",
+      benefits: [
+        "Laudos técnicos com rigor científico",
+        "Avaliação imparcial e ética",
+        "Instrumentos psicológicos validados",
+        "Experiência em diferentes demandas judiciais",
+        "Relatórios detalhados para o judiciário"
+      ]
     }
   ];
 
@@ -119,7 +133,20 @@ export default function Home() {
     "Intervenção ABA para TEA — FAMEESP (720h)",
     "Psicologia Jurídica e Desenvolvimento Infantil — FAMEESP (600h)",
     "Terapia Cognitivo-Comportamental e Saúde Mental",
-    "Doutor em Psicoeducação pela Universidade de São Carlos"
+    "Doutor em Psicoeducação pela Universidade de São Carlos",
+    "Mestre em Diversidade Cultural e Criminologia"
+  ];
+
+  const homeServiceCities = [
+    "Casa Branca - SP",
+    "Aguaí - SP", 
+    "Vargem Grande do Sul - SP",
+    "Itobi - SP",
+    "Divinolândia - SP",
+    "São João da Boa Vista - SP",
+    "São Sebastião da Grama - SP",
+    "Caconde - SP",
+    "São Carlos - SP"
   ];
 
   const toggleCard = (index: number) => {
@@ -435,8 +462,95 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Serviços Section - Melhorada */}
+      {/* Nova Seção - Atendimento Domiciliar */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Atendimento Domiciliar
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Além do atendimento online, também ofereço consultas presenciais no conforto da sua casa
+              </p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Conteúdo */}
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                    <HomeIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#2D1B69] mb-2">Conforto e Privacidade</h3>
+                    <p className="text-gray-700">
+                      Atendimento no ambiente familiar, proporcionando maior conforto e reduzindo a ansiedade, 
+                      especialmente importante para pessoas com TDAH e Autismo.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Stethoscope className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#2D1B69] mb-2">Avaliação Contextualizada</h3>
+                    <p className="text-gray-700">
+                      Possibilidade de observar o comportamento no ambiente natural, 
+                      enriquecendo a avaliação neuropsicológica com dados mais precisos.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#2D1B69] mb-2">Envolvimento Familiar</h3>
+                    <p className="text-gray-700">
+                      Facilita a participação da família no processo terapêutico, 
+                      especialmente importante no tratamento de crianças e adolescentes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Cidades Atendidas */}
+              <div className="bg-gradient-to-br from-[#2D1B69] to-[#4A3C8C] text-white p-8 rounded-2xl">
+                <div className="flex items-center space-x-3 mb-6">
+                  <MapPin className="w-8 h-8 text-[#9D8DF1]" />
+                  <h3 className="text-2xl font-bold">Cidades Atendidas</h3>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {homeServiceCities.map((city, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-[#9D8DF1] flex-shrink-0" />
+                      <span className="text-sm">{city}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <a 
+                    href="https://wa.me/5519995264250?text=Gostaria de saber mais sobre atendimento domiciliar"
+                    className="bg-[#9D8DF1] hover:bg-[#8B7AE8] text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Consultar Disponibilidade</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Serviços Section - Melhorada */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -524,13 +638,11 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
-
         </div>
       </section>
 
       {/* Vídeos Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
